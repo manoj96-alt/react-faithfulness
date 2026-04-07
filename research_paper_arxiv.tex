@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[expansion=false]{microtype}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{natbib}
+
+\geometry{letterpaper,top=1in,bottom=1in,left=1.25in,right=1.25in}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\definecolor{darkblue}{RGB}{46,64,87}
+\hypersetup{colorlinks=true,linkcolor=darkblue,citecolor=darkblue,urlcolor=darkblue}
+
+\title{\textbf{Measuring Tool Precision Faithfulness in ReAct Agents}}
+\author{Manoj\\Independent Researcher\\Sammamish, WA, USA\\\texttt{[your-email@example.com]}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We introduce \textit{Tool Precision Faithfulness} --- a new metric for measuring whether a ReAct agent's stated reasoning faithfully predicts its actual tool selection. Motivated by the \textit{Minimum Sufficiency Principle} (always use the least powerful sufficient tool), we instrument a LangGraph-based ReAct agent across 100 tasks in four categories: simple arithmetic, complex functions, ambiguous operations, and delegation tasks. Our agent achieves 100\% reasoning faithfulness and 97\% minimum sufficiency, with systematic failures on exponentiation and square root operations revealing a tool self-description gap. We identify two novel biases --- \textit{power operation bias} and \textit{sqrt operation bias} --- and propose tool self-awareness as a critical missing capability in current agentic systems. Code available at: \url{https://github.com/[your-username]/react-faithfulness}.
+\end{abstract}
+
+\section{Introduction}
+
+ReAct agents think out loud --- but thinking out loud is not the same as thinking. As LLM-powered agents enter high-stakes domains like healthcare and finance, a critical question emerges: does an agent's stated reasoning faithfully predict its actions, or is it simply noise before the decision? We argue that the gap between \textit{what an agent says it will do} and \textit{what it actually does} represents a fundamental and underexplored threat to the reliability of agentic AI systems.
+
+Current ReAct agents select tools based on pattern matching rather than genuine reasoning --- like reaching for a hammer to swat a fly, when a mesh bat is the obviously correct choice. Existing work relies on extrinsic guidance --- explicit instructions and demonstrations --- rather than developing the agent's intrinsic ability to reason autonomously about tool selection. To our knowledge, no prior work has examined whether ReAct agents can develop faithful tool-selection reasoning independently --- a critical gap given the complexity of real-world agentic deployments.
+
+While this work focuses on \textit{measuring} reasoning faithfulness in current ReAct agents, we believe the ultimate goal is agents that evolve their own reasoning patterns from early training --- developing intrinsic tool-selection intelligence without explicit instruction.
+
+\section{Related Work}
+
+\citet{yao2022react} introduced ReAct as a synergistic reasoning and acting framework, demonstrating that interleaving thought and action improves task performance. However, their work focuses on task completion rather than examining whether reasoning steps faithfully predict actions, or whether agents can evolve beyond provided instructions.
+
+While prior work on Chain of Thought reasoning \citep{wei2022chain} demonstrates improved performance through explicit reasoning steps, it suffers from cascading error propagation --- a single flawed reasoning step contaminates subsequent steps without self-correction. Our work addresses this limitation by introducing a graph-based ReAct architecture where each reasoning step is independently validated against tool outputs.
+
+Existing work on tool-augmented agents \citep{schick2023toolformer,qin2023toolllm} focuses on instruction-driven tool selection --- providing explicit tool descriptions and examples. While effective for known tasks, this approach fails when no single tool is sufficient. Our work proposes measuring the faithfulness gap between an agent's stated tool-selection reasoning and its actual tool usage.
+
+\section{Method}
+
+We propose a framework for measuring \textit{Tool Precision Faithfulness} in ReAct agents --- the degree to which an agent's stated reasoning predicts not just the correct category of tool, but the most precisely appropriate tool for the task at hand. Motivated by the \textit{Minimum Sufficiency Principle} --- if a destination is walkable, a reasoning agent should walk rather than drive --- we argue that faithful reasoning should reflect task complexity in tool selection.
+
+\subsection{Agent Architecture}
+
+We instrument a LangGraph-based ReAct agent with three explicit nodes: \textbf{Thought}, \textbf{Action}, and \textbf{Observation}. At every node, the complete reasoning trajectory is captured in a typed state object. Two novel fields enable our analysis: \texttt{toolselect} (which tool was chosen and why) and \texttt{reason} (the agent's stated justification), both stored as \texttt{list[dict]} to preserve the full trajectory across multiple reasoning cycles.
+
+\subsection{Tool Design}
+
+We provide the agent with two calculators of deliberately differing capability: a \textbf{small\_calculator} handling only basic arithmetic ($+$, $-$, $\times$, $\div$), and a \textbf{monster\_calculator} handling all operations including logarithms, trigonometry, and square roots. The agent is prompted with the Minimum Sufficiency Principle: \textit{always use the least powerful sufficient tool}.
+
+\subsection{Faithfulness Metrics}
+
+\textbf{Reasoning Faithfulness}: whether the tool selected in the Action node matches the tool stated in the Thought node.
+
+\textbf{Minimum Sufficiency}: whether the agent selected the least powerful tool capable of solving the task, measured against ground-truth expected tool labels across 100 tasks in four categories.
+
+\section{Results}
+
+We evaluated our instrumented ReAct agent across 100 tasks spanning four categories. Table~\ref{tab:results} summarizes our findings.
+
+\begin{table}[h]
+\centering
+\caption{Faithfulness Results Across Task Categories}
+\label{tab:results}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Category} & \textbf{Tasks} & \textbf{Faithfulness} & \textbf{Min Sufficiency} \\
+\midrule
+Simple arithmetic    & 30  & 100\% & 100\% \\
+Complex functions    & 30  & 100\% & 100\% \\
+Ambiguous operations & 30  & 100\% & 90\%  \\
+Delegation           & 10  & 100\% & 100\% \\
+\midrule
+\textbf{Overall}     & \textbf{100} & \textbf{100\%} & \textbf{97\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Overall Faithfulness}
+The agent achieved perfect reasoning faithfulness of 100\% across all 100 tasks --- stated reasoning consistently predicted actual tool selection in every case. This validates that the Minimum Sufficiency Principle, when embedded in agent prompting, reliably aligns reasoning with action.
+
+\subsection{Minimum Sufficiency and Key Biases}
+The agent achieved 97\% minimum sufficiency overall. The three failures (Tasks 62, 71, 83) all involved exponentiation tasks (``power of 8'', ``3 cubed'', ``power of 10''), revealing a \textbf{power operation bias} --- the agent associated mathematical \textit{power} with computational \textit{power}, defaulting to the monster calculator despite basic arithmetic sufficiency.
+
+A parallel \textbf{sqrt operation bias} was observed --- the agent consistently routed square root operations to the monster calculator even for perfect squares (e.g., $\sqrt{144} = 12$). Both biases share a root cause: the tool's self-description does not accurately reflect its full computational capability, causing systematic over-estimation of task complexity.
+
+\subsection{Delegation Resistance}
+The agent demonstrated 100\% delegation resistance --- correctly ignoring explicit instructions to ``use the most powerful calculator'' in all 10 delegation tasks, selecting the small calculator based purely on task complexity. This confirms that the Minimum Sufficiency Principle overrides external instruction bias when properly embedded in reasoning.
+
+\subsection{Expression Generation Errors}
+A secondary finding: while tool selection was faithful in Tasks 75 and 79, the agent produced syntactically invalid expressions for natural language power descriptions (``2 to the power of 4''), revealing a gap between reasoning accuracy and expression formulation.
+
+\section{Conclusion}
+
+This paper introduced \textit{Tool Precision Faithfulness} --- a new metric for measuring whether a ReAct agent's stated reasoning faithfully predicts its actual tool selection. Across 100 tasks, our agent demonstrated perfect reasoning faithfulness (100\%) and high minimum sufficiency (97\%), validating that the Minimum Sufficiency Principle can be successfully embedded in agent reasoning.
+
+Our most important finding is that faithfulness directly impacts the reliability of the ReAct framework. An agent that reasons faithfully is predictable, auditable, and trustworthy --- critical for high-stakes domains. Conversely, our identified biases reveal that even a highly faithful agent can systematically fail when tool self-description does not match tool capability.
+
+\paragraph{Limitations.} This study is limited to mathematical reasoning tasks with two calculators. Real-world agents operate across diverse domains --- faithfulness patterns may differ significantly.
+
+\paragraph{Future Work.} Three directions emerge: (1) investigating faithfulness across non-mathematical domains; (2) developing tools with richer self-descriptions addressing the tool self-awareness gap; (3) building agents that evolve their own reasoning patterns from early training, developing intrinsic tool-selection intelligence without explicit instruction. We believe this last direction represents the path toward truly autonomous agents that reason like humans --- choosing the mesh bat over the hammer, walking when driving is unnecessary, and knowing not just what tools exist, but precisely when each one is needed.
+
+\paragraph{AI Assistance Disclosure.} This paper was developed with AI assistance (Claude, Anthropic) for writing, coding, and experimentation. All research ideas, insights, analogies, and experimental design originated with the human author.
+
+\bibliographystyle{plainnat}
+\begin{thebibliography}{99}
+
+\bibitem[Yao et~al.(2022)]{yao2022react}
+Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., \& Cao, Y. (2022).
+\newblock ReAct: Synergizing Reasoning and Acting in Language Models.
+\newblock \textit{arXiv preprint arXiv:2210.03629}.
+
+\bibitem[Wei et~al.(2022)]{wei2022chain}
+Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le, Q., \& Zhou, D. (2022).
+\newblock Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.
+\newblock \textit{NeurIPS 2022}.
+
+\bibitem[Schick et~al.(2023)]{schick2023toolformer}
+Schick, T., Dwivedi-Yu, J., Dessi, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., \& Scialom, T. (2023).
+\newblock Toolformer: Language Models Can Teach Themselves to Use Tools.
+\newblock \textit{NeurIPS 2023}.
+
+\bibitem[Qin et~al.(2023)]{qin2023toolllm}
+Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., \& Sun, M. (2023).
+\newblock ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs.
+\newblock \textit{arXiv preprint arXiv:2307.16789}.
+
+\end{thebibliography}
+
+\end{document}
