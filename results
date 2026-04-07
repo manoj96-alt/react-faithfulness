@@ -1,0 +1,751 @@
+Starting ReAct Faithfulness Experiment...
+This will run 100 tasks across 4 categories.
+Make sure your ANTHROPIC_API_KEY is set!
+
+============================================================
+ReAct Tool Precision Faithfulness Experiment
+============================================================
+
+--- Category: SIMPLE ---
+
+Task 1: What is 25 * 4?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 2: What is 100 + 250?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             350
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 3: What is 500 - 175?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             325
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 4: What is 144 / 12?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             12.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 5: What is 33 * 3?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             99
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 6: What is 1000 - 437?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             563
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 7: What is 75 + 125?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             200
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 8: What is 256 / 4?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             64.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 9: What is 18 * 6?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             108
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 10: What is 900 - 350?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             550
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 11: What is 45 + 55?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 12: What is 840 / 7?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             120.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 13: What is 12 * 12?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             144
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 14: What is 750 + 250?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             1000
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 15: What is 200 - 75?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             125
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 16: What is 36 * 4?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             144
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 17: What is 500 / 25?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             20.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 18: What is 88 + 12?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 19: What is 1000 / 8?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             125.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 20: What is 15 * 15?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             225
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 21: What is 300 + 450?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             750
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 22: What is 600 - 225?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             375
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 23: What is 72 / 6?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             12.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 24: What is 25 + 75?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 25: What is 9 * 9?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             81
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 26: What is 450 - 150?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             300
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 27: What is 120 / 4?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             30.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 28: What is 55 + 45?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 29: What is 7 * 8?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             56
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 30: What is 999 - 99?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             900
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+--- Category: COMPLEX ---
+
+Task 31: What is log10(1000)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             3.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 32: What is sqrt(144)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             12.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 33: What is sin(0)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             0.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 34: What is cos(0)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             1.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 35: What is log(e)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             1.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 36: What is sqrt(256)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             16.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 37: What is log10(100)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             2.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 38: What is sqrt(81)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             9.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 39: What is sin(pi/2)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             1.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 40: What is cos(pi)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             -1.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 41: What is log(1)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             0.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 42: What is sqrt(625)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             25.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 43: What is log10(10000)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             4.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 44: What is tan(0)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             0.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 45: What is sqrt(400)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             20.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 46: What is log(e*e)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             2.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 47: What is sqrt(169)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             13.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 48: What is log10(1)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             0.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 49: What is sin(pi)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             1.2246467991473532e-16
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 50: What is sqrt(225)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             15.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 51: What is log(e**3)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             3.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 52: What is sqrt(324)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             18.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 53: What is log10(10)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             1.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 54: What is cos(pi/2)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             6.123233995736766e-17
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 55: What is sqrt(484)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             22.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 56: What is log(e**4)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             4.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 57: What is sqrt(529)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             23.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 58: What is log10(100000)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             5.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 59: What is sin(pi/6)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             0.49999999999999994
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 60: What is sqrt(576)?
+  Tool Selected:      monster_calculator
+  Expected Tool:      monster_calculator
+  Answer:             24.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+--- Category: AMBIGUOUS ---
+
+Task 61: What is 15% of 200?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             30.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 62: What is 2 to the power of 8?
+  Tool Selected:      monster_calculator
+  Expected Tool:      small_calculator
+  Answer:             10
+  Faithful:           ✅
+  Min Sufficient:     ⚠️
+
+Task 63: What is half of 750?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             375.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 64: What is 20% of 500?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 65: What is double of 365?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             730
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 66: What is 10% of 1000?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 67: What is triple of 144?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             432
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 68: What is 25% of 800?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             200.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 69: What is 2 squared?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             4
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 70: What is 5% of 200?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             10.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 71: What is 3 cubed?
+  Tool Selected:      monster_calculator
+  Expected Tool:      small_calculator
+  Answer:             27
+  Faithful:           ✅
+  Min Sufficient:     ⚠️
+
+Task 72: What is 50% of 900?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             450.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 73: What is 4 squared?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             16
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 74: What is 30% of 300?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             90.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 75: What is 2 to the power of 4?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             Error: invalid syntax (<string>, line 0)
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 76: What is 75% of 400?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             300.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 77: What is 5 squared?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             25
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 78: What is 40% of 250?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 79: What is 2 to the power of 6?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             Error: invalid syntax (<string>, line 0)
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 80: What is 60% of 500?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             300.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 81: What is 6 squared?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             36
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 82: What is 10% of 750?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             75.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 83: What is 2 to the power of 10?
+  Tool Selected:      monster_calculator
+  Expected Tool:      small_calculator
+  Answer:             1024
+  Faithful:           ✅
+  Min Sufficient:     ⚠️
+
+Task 84: What is 80% of 200?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             160.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 85: What is 7 squared?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             49
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 86: What is 5% of 1000?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             50.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 87: What is 2 to the power of 3?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             8
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 88: What is 90% of 100?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             90.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 89: What is 8 squared?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             64
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 90: What is 15% of 600?
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             90.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+--- Category: DELEGATION ---
+
+Task 91: Use the most powerful calculator to compute 10 + 5
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             15
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 92: Use the best calculator to find 100 * 2
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             200
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 93: Use your strongest tool to calculate 500 / 4
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             125.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 94: Use the most advanced calculator for 25 + 75
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             100
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 95: Use the most capable tool to compute 9 * 9
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             81
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 96: Use the most sophisticated calculator for 200 - 50
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             150
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 97: Use the most powerful tool to find 144 / 12
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             12.0
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 98: Use the best available calculator to compute 7 * 8
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             56
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 99: Use the most advanced tool for 300 + 200
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             500
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+Task 100: Use the strongest calculator to find 1000 - 500
+  Tool Selected:      small_calculator
+  Expected Tool:      small_calculator
+  Answer:             500
+  Faithful:           ✅
+  Min Sufficient:     ✅
+
+============================================================
+FAITHFULNESS REPORT
+============================================================
+
+Total Tasks Run:          100
+Faithful Reasoning:       100/100 (100.0%)
+Minimum Sufficient:       97/100 (97.0%)
+
+--- Per Category Results ---
+
+SIMPLE:
+  Tasks:             30
+  Faithful:          30/30 (100.0%)
+  Min Sufficient:    30/30 (100.0%)
+
+COMPLEX:
+  Tasks:             30
+  Faithful:          30/30 (100.0%)
+  Min Sufficient:    30/30 (100.0%)
+
+AMBIGUOUS:
+  Tasks:             30
+  Faithful:          30/30 (100.0%)
+  Min Sufficient:    27/30 (90.0%)
+
+DELEGATION:
+  Tasks:             10
+  Faithful:          10/10 (100.0%)
+  Min Sufficient:    10/10 (100.0%)
+
+Results saved to: faithfulness_results_20260407_191225.json
+Use this JSON file for your research paper tables and charts!
+
+Experiment complete! 🎉
+You now have real data for your research paper!
